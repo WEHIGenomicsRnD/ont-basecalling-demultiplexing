@@ -51,7 +51,10 @@ process nanoPlot {
   label 'nanoplot'
   tag "${name}"
   publishDir "${params.output_dir}/qc/nanoplot", mode: 'copy'
-  cpus 4
+  cpus { 4 * task.attempt }
+  memory { 8.GB * task.attempt }
+  errorStrategy 'retry'
+  maxRetries 3
 
   input:
   tuple val(name), path(reads)
