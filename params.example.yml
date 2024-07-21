@@ -12,4 +12,4 @@ dorado_demux_kit: EXP-NBD196
 dorado_demux_both_ends: false
 dorado_demux_extra_config: ''
 dorado_demux_cpus: 16
-use_dorado_container: true
+use_dorado_container: false
